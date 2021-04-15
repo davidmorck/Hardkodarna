@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ladda upp ditt caddade objekt</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios@0.2.1/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Hårdkodarna - Ladda upp fil</h1>
+  
+      <div v-if="!model">
+        <h2>Välj en fil, endast filer av typen OBJ accepteras.</h2>
+        <input type="file" @change="onFileChange">
+      </div>
+      <div v-else>
+        <img :src="model" />
+        <button v-if="!uploadURL" @click="removemodel">Ta bort fil</button>
+        <button v-if="!uploadURL" @click="uploadmodel">Ladda upp fil</button>
+      </div>
+      <div v-if="uploadURL">
+        <h2>Perfekt! Bilden har nu laddats upp. Scanna QR-koden nedan för med vår AR-applikation för att se ditt objekt i realtid?</h2>
+        <!-- <img :src="newQRCode" alt="QRCode" /> -->
+      </div>
+    </div>
+  
+    <script>
+      const API_ENDPOINT = 'https://fhnrrpy8k3.execute-api.us-east-1.amazonaws.com/uploads'
+
+      new Vue({
+        el: "#app",
+        data: {
+          model: '',
+          uploadURL: ''
+        },
+        methods: {
+          onFileChange (e) {
+            let files = e.target.files || e.dataTransfer.files
+            if (!files.length) return
+            this.createmodel(files[0])
+          },
+          createmodel (file) {
+            // var model = new model()
+            let reader = new FileReader()
+            reader.onload = (e) => {
+              console.log('length: ', e.target.result.includes('data:model/obj'))
+              // if (this.file.includes('obj')) {
+              //   return alert('Fel filtyp - endast OBJ accepteras.')
+              // }
+              this.model = e.target.result
+            }
+            reader.readAsDataURL(file)
+          },
+          removemodel: function (e) {
+            console.log('Remove clicked')
+            this.model = ''
+          },
+          uploadmodel: async function (e) {
+            console.log('Upload clicked')
+            // Get the presigned URL
+            const response = await axios({
+              method: 'GET',
+              url: API_ENDPOINT
+            })
+            console.log('Response: ', response)
+            console.log('Uploading: ', this.model)
+            let binary = atob(this.model.split(',')[1])
+            let array = []
+            for (var i = 0; i < binary.length; i++) {
+              array.push(binary.charCodeAt(i))
+            }
+            let blobData = new Blob([new Uint8Array(array)], {type: 'model/obj'})
+            console.log('Uploading to: ', response.uploadURL)
+            const result = await fetch(response.uploadURL, {
+              method: 'PUT',
+              body: blobData
+            })
+            console.log('Result: ', result)
+            // Final URL for the user doesn't need the query string params
+            this.uploadURL = response.uploadURL.split('?')[0]
+          }
+        }
+      })
+    </script>
+    <style type="text/css">
+      body {
+        background: rgb(17, 96, 199);
+        padding: 20px;
+        font-family: sans-serif;
+      }
+      #app {
+        background: #fff;
+        border-radius: 4px;
+        padding: 20px;
+        transition: all 0.2s;
+        text-align: center;
+      }
+      #logo {
+        width: 100px;
+      }
+      h2 {
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      h1, h2 {
+        font-weight: normal;
+        margin-bottom: 15px;
+      }
+      a {
+        color: #42b983;
+      }
+      img {
+        width: 30%;
+        margin: auto;
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </body>
+</html>
