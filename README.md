@@ -16,7 +16,9 @@ Vi ska skapa ett AR-projekt där man kan testa sina caddade filer innan man skri
 ## Beskrivning av delsystem
 
 ### Hemsida
+Hemsidan är byggd med Vue importerat in i en vanlig html fil. Denna fil kan du finna under sökvägen "Hemsida/index.html". HTML-kodens script del består av två huvudskaliga delar. En del som är en modifiering av AWS egna exempelkod för att kunna skicka filer från en hemsida till en API, [här kan du se exempelkoden](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam "AWS egen GitHub"). Den största skillnaden mellan AWS egna exempelalternativ och vår lösning är att de endast tillåter JPG-filer medan vi endast vill tillåta obj-filer. Därför ser koderna också mycket olika ut.
 
+Den andra huvudsakliga delen av vår script-kod består av en kod som genererar en QR-kod i samband med att användaren laddar upp sin fil. För att skapa QR-koden används ett bibliotek för VUE vid namn QRious, [läs mer om Qrious här](https://www.npmjs.com/package/vue-qrious "QRious dokumentation"). Till QR-koden kopplas den information som finns i filen, således finns data med alla de vektorer vektorer som tillsammans bygger upp objektet lagrade på QR-koden. 
 ### Backend
 
 ### AR-applikation
