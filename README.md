@@ -17,6 +17,9 @@ Vi ska skapa ett AR-projekt där man kan testa sina caddade filer innan man skri
 ## Beskrivning av delsystem
 
 ### Hemsida
+
+[Här kan du gå in på vår hemsida](https://s3.amazonaws.com/hardkodarna-ar-hemsida.se/index.html "CAD-ARs hemsida")
+
 Hemsidan är byggd med Vue importerat in i en vanlig html-fil. Denna fil kan du finna under sökvägen "Hemsida/index.html". HTML-kodens script del består av två huvudskaliga delar. En del som är en modifiering av AWS egna exempelkod för att kunna skicka filer från en hemsida till en API, [här kan du se exempelkoden](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam "AWS egen GitHub"). Den största skillnaden mellan AWS egna exempelalternativ och vår lösning är att de endast tillåter JPG-filer medan vi endast vill tillåta obj-filer. Därför ser koderna också mycket olika ut. På bilden nedan syns hur hemsidans startsida ser ut. 
 
 ![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/hemsida.PNG "Bild på hemsidan")
