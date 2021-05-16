@@ -29,6 +29,8 @@ Den andra huvudsakliga delen av vår script-kod består av en kod som genererar 
 ![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/HemsidaQR.PNG "Bild på QR-kod från hemsidan")
 
 Utöver det består hemsidans kod av lite CSS och några textrader med information som riktar sig till användaren. Dessutom finns ett par knappar där användaren kan ladda upp filer från den egna datorn. Hemsidans design är simpel och användarvänlig. Den är enkel i sin layout då fokus främst legat på funktion och AR-applikationens utseende. Hemsidans främsta syfte är att på ett enkelt sätt kunna erbjuda en smidig lösning för att ladda upp filer. Samtidigt som den ska kunna ge information till användaren kring funktion hos både hemsida och AR-applikation. 
+
+Hemsidan hostas med hjälp AWS S3 och static website hosting. En smidig lösning för att på ett enkelt sätt hosta hemsidor gratis genom Amazon Web Services. 
 ### Backend
 
 ### AR-applikation
