@@ -1,4 +1,4 @@
-# Hårdkodarna
+# cadAR
 En AR-applikation med tillhörande hemsida för visualisering av konstruerade CAD-objekt. 
 
 ## Funktion och användande
@@ -37,5 +37,5 @@ Utöver det består hemsidans kod av lite CSS och några textrader med informati
 
 
 ## Gruppinfo
-Gruppen består av Amjad Alakrami, David Mörck och Joakim Eriksson
+Gruppen Hårdkodarna består av Amjad Alakrami, David Mörck och Joakim Eriksson
 ##### Har du frågor angående vårt projekt? Tveka då inte att höra av dig på mail. 
