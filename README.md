@@ -23,7 +23,7 @@ Hemsidan är byggd med Vue importerat in i en vanlig html-fil. Denna fil kan du 
 
 Den andra huvudsakliga delen av vår script-kod består av en kod som genererar en QR-kod i samband med att användaren laddar upp sin fil. För att skapa QR-koden används ett bibliotek för VUE vid namn QRious, [läs mer om Qrious här](https://www.npmjs.com/package/vue-qrious "QRious dokumentation"). Till QR-koden kopplas den information som finns i filen, således finns data med alla de vektorer vektorer som tillsammans bygger upp objektet lagrade på QR-koden. Utöver QR-koden skrivs också objektID:t ut på skärmen, något som syns på bilden nedan. 
 
-![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/hemsidaQR.PNG "Bild på QR-kod från hemsidan")
+![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/HemsidaQR.PNG "Bild på QR-kod från hemsidan")
 
 Utöver det består hemsidans kod av lite CSS och några textrader med information som riktar sig till användaren. Dessutom finns ett par knappar där användaren kan ladda upp filer från den egna datorn. Hemsidans design är simpel och användarvänlig. Den är enkel i sin layout då fokus främst legat på funktion och AR-applikationens utseende. Hemsidans främsta syfte är att på ett enkelt sätt kunna erbjuda en smidig lösning för att ladda upp filer. Samtidigt som den ska kunna ge information till användaren kring funktion hos både hemsida och AR-applikation. 
 ### Backend
@@ -35,4 +35,4 @@ Utöver det består hemsidans kod av lite CSS och några textrader med informati
 
 ## Gruppinfo
 Gruppen består av Amjad Alakrami, David Mörck och Joakim Eriksson
-##### Har du frågor? Tveka då inte att höra av dig på mail. 
+##### Har du frågor angående vårt projekt? Tveka då inte att höra av dig på mail. 
