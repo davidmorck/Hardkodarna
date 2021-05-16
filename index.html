@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cadAR</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios@0.2.1/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>cadAR</h1>
+      <h2>Ladda upp dina CAD-filer här för att se dem i realtid via vår mobilapp.</h2>
+      <div v-if="!model">
+        <h3>Välj en fil nedan: </h3>
+        <input type="file" @change="onFileChange">
+      </div>
+      <div v-else>
+        <img src="model" alt="En fil har valts">
+        <button v-if="!uploadURL" @click="removemodel">Radera fil</button>
+        <button v-if="!uploadURL" @click="uploadmodel">Ladda upp fil</button>
+      </div>
+      <p>
+      </p>
+      <div v-if="uploadURL">
+        <h2>Perfekt! Nu har filen laddats upp.</h2>
+        <h2>Scanna QR-koden nedan med vår AR-applikation för att se ditt objekt.</h2>
+        <h2>ObjektID: {{objektID}} </h2>
+        <img :src="this.qrcode.toDataURL()" alt="QRCode" />
+      </div>
+    </div>
+    <p></p>
+    <p></p>
+    <div id="info">
+        <h3>Instruktion:</h3>
+        <p>1. Ladda upp din fil här på hemsidan</p>
+        <p>2. Scanna QR-koden med vår mobilapplikation</p>
+        <p>3. Se dina Caddade delar i din verkliga miljö</p>
+        <h3>Obs!</h3>
+        <p>Observera att det endast går att ladda upp filer av typen '.obj'. För att göra det sparar du din fil som obj-fil i Solidworks, förutsatt att du har Solidworksversion 2020 eller senare. Har du en äldre version av Solidworks? Exportera din fil till Flashprint och exportera filen som '.obj' därifrån.</p>
+        <a href="https://github.com/davidmorck/Hardkodarna">Besök gärna vår GitHub här</a>
+     </div>
+
+  
+    <script>
+      const API_ENDPOINT = 'https://fhnrrpy8k3.execute-api.us-east-1.amazonaws.com/uploads' 
+      new Vue({
+        el: "#app",
+        data: {
+          model: '',
+          uploadURL: '',
+          qrcode: new QRious({ size: 300 }),
+          objektID: '',
+        },
+        methods: {
+          onFileChange (e) {
+            let files = e.target.files || e.dataTransfer.files
+            if (!files.length) return
+            this.createmodel(files[0])
+          },
+          createmodel (file) {
+            // var model = new model()
+            let reader = new FileReader()
+            reader.onload = (e) => {
+              console.log('length: ', e.target.result.includes('model/obj'))
+              this.model = e.target.result
+            }
+            reader.readAsDataURL(file)
+          },
+          removemodel: function (e) {
+            console.log('Remove clicked')
+            this.model = ''
+          },
+          uploadmodel: async function (e) {
+            var vm = this
+            console.log('Upload clicked')
+            // Get the presigned URL
+            const response = await axios({
+              method: 'GET',
+              url: API_ENDPOINT
+            })
+            console.log('Response: ', response.Key)
+            let modelKey = response.Key
+            this.objektID = response.Key
+            this.objektID.replace('.obj', '')
+            console.log('Uploading: ', this.model)
+            let binary = atob(this.model.split(',')[1])
+            let array = []
+            for (var i = 0; i < binary.length; i++) {
+              array.push(binary.charCodeAt(i))
+            }
+            let blobData = new Blob([new Uint8Array(array)], {type: 'model/obj'})
+            console.log('Uploading to: ', response.uploadURL)
+            const result = await fetch(response.uploadURL, {
+              method: 'PUT',
+              body: blobData
+            })
+            console.log('Result: ', result)
+            // Final URL for the user doesn't need the query string params
+            this.uploadURL = response.uploadURL.split('?')[0]
+            if (this.uploadURL !=''){
+              this.qrcode.value = 'https://j3bhf7bd7f.execute-api.us-east-1.amazonaws.com/test2/' + modelKey
+            }
+          }
+        }
+      })
+    </script>
+    <style type="text/css">
+      body {
+        background: rgb(28, 98, 190);
+        padding: 20px;
+        font-family: sans-serif;
+      }
+      #info {
+        background: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        transition: all 0.2s;
+        text-align: center;
+        width: 30%;
+      }
+      #app {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        transition: all 0.2s;
+        text-align: center;
+      }
+      #logo {
+        width: 100px;
+      }
+      h2 {
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      h1, h2 {
+        font-weight: normal;
+        margin-bottom: 15px;
+      }
+      a {
+        color: #42b983;
+      }
+      img {
+        width: 30%;
+        margin: auto;
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </body>
+</html>
