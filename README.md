@@ -10,18 +10,20 @@ Problem med att veta hur ett datordesignat objekt passar in i den verkliga milj�
 Vi ska skapa ett AR-projekt där man kan testa sina caddade filer innan man skriver ut dem. Det går snabbt, smidigt och enkelt att se sina objektm med hjälp av vår applikation. Det gör att materialåtgången minskar då man i relatid kan testa sina objekt innan man skriver ut dem och på så sätt undvika att skriva ut onödiga filer som ändå inte passar in. Dessutom är det tidseffektivt eftersom man släpper lägga onödig tid på att vänta på låmngsamma 3D-skrivare. 
 
 ### Hur fungerar systemet?
-1. Ladda upp din fil av typen obj på vår hemsida. Observera att filen måste vara i obj-format. (Lägg in länk???)
+1. Ladda upp din fil av typen obj på vår hemsida. Observera att filen måste vara i obj-format. 
 2. Scanna den autogenererade QR-koden som då skapas med din mobiltelefon genom vår mobilapplikation.
 3. Njut av att se ditt konstruerade objekt i realtid på din telefon. 
 
 ## Beskrivning av delsystem
 
 ### Hemsida
-Hemsidan är byggd med Vue importerat in i en vanlig html fil. Denna fil kan du finna under sökvägen "Hemsida/index.html". HTML-kodens script del består av två huvudskaliga delar. En del som är en modifiering av AWS egna exempelkod för att kunna skicka filer från en hemsida till en API, [här kan du se exempelkoden](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam "AWS egen GitHub"). Den största skillnaden mellan AWS egna exempelalternativ och vår lösning är att de endast tillåter JPG-filer medan vi endast vill tillåta obj-filer. Därför ser koderna också mycket olika ut.
-
-Den andra huvudsakliga delen av vår script-kod består av en kod som genererar en QR-kod i samband med att användaren laddar upp sin fil. För att skapa QR-koden används ett bibliotek för VUE vid namn QRious, [läs mer om Qrious här](https://www.npmjs.com/package/vue-qrious "QRious dokumentation"). Till QR-koden kopplas den information som finns i filen, således finns data med alla de vektorer vektorer som tillsammans bygger upp objektet lagrade på QR-koden. Utöver QR-koden skrivs också objektID:t ut på skärmen. 
+Hemsidan är byggd med Vue importerat in i en vanlig html-fil. Denna fil kan du finna under sökvägen "Hemsida/index.html". HTML-kodens script del består av två huvudskaliga delar. En del som är en modifiering av AWS egna exempelkod för att kunna skicka filer från en hemsida till en API, [här kan du se exempelkoden](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam "AWS egen GitHub"). Den största skillnaden mellan AWS egna exempelalternativ och vår lösning är att de endast tillåter JPG-filer medan vi endast vill tillåta obj-filer. Därför ser koderna också mycket olika ut. På bilden nedan syns hur hemsidans startsida ser ut. 
 
 ![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/hemsida.PNG "Bild på hemsidan")
+
+Den andra huvudsakliga delen av vår script-kod består av en kod som genererar en QR-kod i samband med att användaren laddar upp sin fil. För att skapa QR-koden används ett bibliotek för VUE vid namn QRious, [läs mer om Qrious här](https://www.npmjs.com/package/vue-qrious "QRious dokumentation"). Till QR-koden kopplas den information som finns i filen, således finns data med alla de vektorer vektorer som tillsammans bygger upp objektet lagrade på QR-koden. Utöver QR-koden skrivs också objektID:t ut på skärmen, något som syns på bilden nedan. 
+
+![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/hemsidaQR.PNG "Bild på QR-kod från hemsidan")
 
 Utöver det består hemsidans kod av lite CSS och några textrader med information som riktar sig till användaren. Dessutom finns ett par knappar där användaren kan ladda upp filer från den egna datorn. Hemsidans design är simpel och användarvänlig. Den är enkel i sin layout då fokus främst legat på funktion och AR-applikationens utseende. Hemsidans främsta syfte är att på ett enkelt sätt kunna erbjuda en smidig lösning för att ladda upp filer. Samtidigt som den ska kunna ge information till användaren kring funktion hos både hemsida och AR-applikation. 
 ### Backend
