@@ -19,11 +19,11 @@ Vi ska skapa ett AR-projekt där man kan testa sina caddade filer innan man skri
 ### Hemsida
 Hemsidan är byggd med Vue importerat in i en vanlig html fil. Denna fil kan du finna under sökvägen "Hemsida/index.html". HTML-kodens script del består av två huvudskaliga delar. En del som är en modifiering av AWS egna exempelkod för att kunna skicka filer från en hemsida till en API, [här kan du se exempelkoden](https://github.com/aws-samples/amazon-s3-presigned-urls-aws-sam "AWS egen GitHub"). Den största skillnaden mellan AWS egna exempelalternativ och vår lösning är att de endast tillåter JPG-filer medan vi endast vill tillåta obj-filer. Därför ser koderna också mycket olika ut.
 
-Den andra huvudsakliga delen av vår script-kod består av en kod som genererar en QR-kod i samband med att användaren laddar upp sin fil. För att skapa QR-koden används ett bibliotek för VUE vid namn QRious, [läs mer om Qrious här](https://www.npmjs.com/package/vue-qrious "QRious dokumentation"). Till QR-koden kopplas den information som finns i filen, således finns data med alla de vektorer vektorer som tillsammans bygger upp objektet lagrade på QR-koden. 
+Den andra huvudsakliga delen av vår script-kod består av en kod som genererar en QR-kod i samband med att användaren laddar upp sin fil. För att skapa QR-koden används ett bibliotek för VUE vid namn QRious, [läs mer om Qrious här](https://www.npmjs.com/package/vue-qrious "QRious dokumentation"). Till QR-koden kopplas den information som finns i filen, således finns data med alla de vektorer vektorer som tillsammans bygger upp objektet lagrade på QR-koden. Utöver QR-koden skrivs också objektID:t ut på skärmen. 
 
 ![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/hemsida.PNG "Bild på hemsidan")
 
-Utöver det består hemsidans kod av lite CSS och några textrader med information som riktar sig till användaren. Dessutom finns ett par knappar där användaren kan ladda upp filer från den egna datorn. Hemsidans design är simpel och användarvänlig. Den är enkel i sin layput då fokus främst legat på funktion och AR-applikationens utseende. 
+Utöver det består hemsidans kod av lite CSS och några textrader med information som riktar sig till användaren. Dessutom finns ett par knappar där användaren kan ladda upp filer från den egna datorn. Hemsidans design är simpel och användarvänlig. Den är enkel i sin layout då fokus främst legat på funktion och AR-applikationens utseende. Hemsidans främsta syfte är att på ett enkelt sätt kunna erbjuda en smidig lösning för att ladda upp filer. Samtidigt som den ska kunna ge information till användaren kring funktion hos både hemsida och AR-applikation. 
 ### Backend
 
 ### AR-applikation
