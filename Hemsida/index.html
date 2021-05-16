@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hårdkodarna</title>
+    <title>cadAR</title>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios@0.2.1/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
   </head>
   <body>
     <div id="app">
-      <h1>Ladda upp dina CAD-filer här för att se dem i realtid via vår mobilapp.</h1>
+      <h1>cadAR</h1>
+      <h2>Ladda upp dina CAD-filer här för att se dem i realtid via vår mobilapp.</h2>
       <div v-if="!model">
         <h3>Välj en fil nedan: </h3>
         <input type="file" @change="onFileChange">
