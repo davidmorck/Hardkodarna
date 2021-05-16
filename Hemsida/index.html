@@ -23,6 +23,7 @@
       <div v-if="uploadURL">
         <h2>Perfekt! Nu har filen laddats upp.</h2>
         <h2>Scanna QR-koden nedan med vår AR-applikation för att se ditt objekt.</h2>
+        <h2>ObjektID: {{objektID}} </h2>
         <img :src="this.qrcode.toDataURL()" alt="QRCode" />
       </div>
     </div>
@@ -36,7 +37,7 @@
         <h3>Obs!</h3>
         <p>Observera att det endast går att ladda upp filer av typen '.obj'. För att göra det sparar du din fil som obj-fil i Solidworks, förutsatt att du har Solidworksversion 2020 eller senare. Har du en äldre version av Solidworks? Exportera din fil till Flashprint och exportera filen som '.obj' därifrån.</p>
         <a href="https://github.com/davidmorck/Hardkodarna">Besök gärna vår GitHub här</a>
-      </div>
+     </div>
 
   
     <script>
@@ -47,6 +48,7 @@
           model: '',
           uploadURL: '',
           qrcode: new QRious({ size: 300 }),
+          objektID: '',
         },
         methods: {
           onFileChange (e) {
@@ -68,6 +70,7 @@
             this.model = ''
           },
           uploadmodel: async function (e) {
+            var vm = this
             console.log('Upload clicked')
             // Get the presigned URL
             const response = await axios({
@@ -76,6 +79,8 @@
             })
             console.log('Response: ', response.Key)
             let modelKey = response.Key
+            this.objektID = response.Key
+            this.objektID.replace('.obj', '')
             console.log('Uploading: ', this.model)
             let binary = atob(this.model.split(',')[1])
             let array = []
