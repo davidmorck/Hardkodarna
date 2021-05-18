@@ -50,7 +50,7 @@ AR-appen har ett elegant och användarvänligt gränssnitt. Alla knappar är pla
 I framtiden skulle det vara spännande att fortsätta utveckla både applikation och hemsida för att få ett ännu bättre och mer felfritt system. Det skulle vara spännande att släppa applikationen tillgänglig för allmänheten på Android så att fler kan testa vårt system. Framtiden för AR-lösningar ser onekligen ljus ut och det används redan idag på olika sätt inom olika branscher. 
 
 ## Planering
-
+Arbetet delades in i tre delar direkt. Joakim Eriksson skulle jobba med hemsidan, David Mörck skulle skapa en backend och Amjad Alakrami skulle programmera AR-appen. Nedan ser vi de krav som vi satte på de olika områdena. 
 ![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/planering.png "Planering")
 
 ## Gruppinfo
