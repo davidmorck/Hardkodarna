@@ -11,8 +11,8 @@ Vi ska skapa ett AR-projekt där man kan testa sina caddade filer innan man skri
 
 ### Hur fungerar systemet?
 1. Ladda upp din fil av typen obj på vår hemsida. Observera att filen måste vara i obj-format. 
-2. Scanna den autogenererade QR-koden som då skapas med din mobiltelefon genom vår mobilapplikation.
-3. Njut av att se ditt konstruerade objekt i realtid på din telefon. 
+2. Scanna den autogenererade QR-koden som då skapas med din mobiltelefon genom vår mobilapplikation. Alternativt skriv in ObjektID:t. 
+3. Njut av att se ditt konstruerade objekt i en verklig miljö genom din mobiltelefon. 
 
 ## Beskrivning av delsystem
 
@@ -24,7 +24,7 @@ Hemsidan är byggd med Vue importerat in i en vanlig html-fil. Denna fil kan du 
 
 ![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/hemsida.PNG "Bild på hemsidan")
 
-Den andra huvudsakliga delen av vår script-kod består av en kod som genererar en QR-kod i samband med att användaren laddar upp sin fil. För att skapa QR-koden används ett bibliotek för VUE vid namn QRious, [läs mer om Qrious här](https://www.npmjs.com/package/vue-qrious "QRious dokumentation"). Till QR-koden kopplas den information som finns i filen, således finns data med alla de vektorer vektorer som tillsammans bygger upp objektet lagrade på QR-koden. Utöver QR-koden skrivs också objektID:t ut på skärmen, något som syns på bilden nedan. 
+Den andra huvudsakliga delen av vår script-kod består av en kod som genererar en QR-kod i samband med att användaren laddar upp sin fil. För att skapa QR-koden används ett bibliotek för VUE vid namn QRious, [läs mer om Qrious här](https://www.npmjs.com/package/vue-qrious "QRious dokumentation"). Till QR-koden kopplas den information som finns i filen, således finns data med alla de vektorer som tillsammans bygger upp objektet lagrade på QR-koden. Utöver QR-koden skrivs också objektID:t ut på skärmen, något som syns på bilden nedan. I dagsläget används ObjektID:t istället för QR-koden i AR-applikationen då QR-lösningen inte står redo att användas fullt ut än. 
 
 ![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/HemsidaQR.PNG "Bild på QR-kod från hemsidan")
 
