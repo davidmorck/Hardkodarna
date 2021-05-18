@@ -32,6 +32,9 @@ Utöver det består hemsidans kod av lite CSS och några textrader med informati
 
 Hemsidan hostas med hjälp AWS S3 och static website hosting. En smidig lösning för att på ett enkelt sätt hosta hemsidor gratis genom Amazon Web Services. 
 ### Backend
+Backenden består av flera tjänster som finns hos AWS, en lambdafunktion, tre API:er och en S3-bucket. Lambdafunktionen aktiveras av den första API:n, som ska kallas på av hemsidan, som returnerar ett slumpat namn till objektet du vill ladda upp och URL:en till en ny API som man ska ladda upp objektet till. Den tredje API:n används av appen för att hämta objektet som laddats upp. 
+
+![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/arvis.PNG "En förenklad modell av systemet")
 
 ### AR-applikation
 
