@@ -49,6 +49,10 @@ AR-appen har ett elegant och användarvänligt gränssnitt. Alla knappar är pla
 ## Framtidsvision
 I framtiden skulle det vara spännande att fortsätta utveckla både applikation och hemsida för att få ett ännu bättre och mer felfritt system. Det skulle vara spännande att släppa applikationen tillgänglig för allmänheten på Android så att fler kan testa vårt system. Framtiden för AR-lösningar ser onekligen ljus ut och det används redan idag på olika sätt inom olika branscher. 
 
+## Planering
+
+![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/planering.PNG "Planering")
+
 ## Gruppinfo
 Gruppen Hårdkodarna består av Amjad Alakrami, David Mörck och Joakim Eriksson
 ##### Har du frågor angående vårt projekt? Tveka då inte att höra av dig på mail. 
