@@ -51,7 +51,7 @@ I framtiden skulle det vara spännande att fortsätta utveckla både applikation
 
 ## Planering
 
-![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/planering.PNG "Planering")
+![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/planering.png "Planering")
 
 ## Gruppinfo
 Gruppen Hårdkodarna består av Amjad Alakrami, David Mörck och Joakim Eriksson
