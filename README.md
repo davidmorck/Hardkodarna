@@ -38,7 +38,7 @@ Backenden består av flera tjänster som finns hos AWS, en lambdafunktion, tre A
 
 ### AR-applikation
 AR-appen har ett elegant och användarvänligt gränssnitt. Alla knappar är placerade på nedre halvan av skärmen vilket gör dem väldigt lättillgängliga för användaren. De eleganta knapparna och ikonerna är en fröjd för användarens ögon. Var man än är i appen så ser man vad kameran ser, detta är för att användaren tydligt ska förstå att detta är en AR-applikation.
-| Förstaskärmen | Efter användaren tryckt på hämta objekt så kommer hen till denna skärm | First Header  | Second Header |
+| Det första användaren ska göra är att ange namnet på objektet (detta ska bytas ut till QR-scanning) | Efter användaren tryckt på hämta objekt så kommer hen till denna skärm | Efter en stund kommer nästa skärm med instruktioner upp | När användaren placerat ut objektet kan hen ta en skärmdump med hjälp av den inbyggda kameraknappen |
 | ------------- | ------------- | ------------- | ------------- |
 |![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-1.png)   |  ![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-2.png)|![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-3.png)   |  ![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-4.png)|
 
