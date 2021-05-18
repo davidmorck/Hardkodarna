@@ -41,7 +41,7 @@ AR-appen har ett elegant och användarvänligt gränssnitt. Alla knappar är pla
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
 
-![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-1.PNG)   |  ![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-2.PNG)
+![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-1.png)   |  ![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-2.png)
 
 
 ## Gruppinfo
