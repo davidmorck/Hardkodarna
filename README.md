@@ -37,8 +37,11 @@ Backenden består av flera tjänster som finns hos AWS, en lambdafunktion, tre A
 ![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/arvis.PNG "En förenklad modell av systemet")
 
 ### AR-applikation
+AR-appen har ett elegant och användarvänligt gränssnitt. Alla knappar är placerade på nedre halvan av skärmen vilket gör dem väldigt lättillgängliga för användaren. De eleganta knapparna och ikonerna är en fröjd för användarens ögon. Var man än är i appen så ser man vad kameran ser, detta är för att användaren tydligt ska förstå att detta är en AR-applikation.
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
 
-
+![alt text](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-1.PNG)   |  ![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-2.PNG)
 
 
 ## Gruppinfo
