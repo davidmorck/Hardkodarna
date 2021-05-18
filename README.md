@@ -1,5 +1,5 @@
 # cadAR
-En AR-applikation med tillhörande [hemsida(https://s3.amazonaws.com/hardkodarna.se/index.html "CAD-ARs hemsida")] för visualisering av konstruerade CAD-objekt. 
+En AR-applikation med tillhörande [hemsida](https://s3.amazonaws.com/hardkodarna.se/index.html "CAD-ARs hemsida") för visualisering av konstruerade CAD-objekt. 
 
 ## Funktion och användande
 
