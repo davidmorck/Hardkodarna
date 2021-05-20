@@ -44,7 +44,21 @@ AR-appen har ett elegant och användarvänligt gränssnitt. Alla knappar är pla
 | ------------- | ------------- | ------------- | ------------- |
 |![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-1.png)   |  ![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-2.png)|![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-3.png)   |  ![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-4.png)|
 
-#### AR-programmering
+#### AR-programmering: 
+##### Bibliotek: 
+* AR Foundation
+* ARCore XR Plugin "Android"
+
+##### Hur man skannar plana ytor: 
+För att kunna placera objekt så måste man först kunna skanna plana ytor i omgivningen för att sedan kunna placera olika föremål på. 
+
+Man börjar först med att skapa "ARsession Origin" genom att höger klicka på hierarchy -> XR -> ARsession Origin. Efter det så tar man bort main kameran som skapas när man startar ett Unity projekt, och använder iställer kameran objektet som skapas inuti ARsession Origin, alltså mobil kameran. Därefter så lägger man till en komponent till ARsession Origin som kallas AR Plane Manager, denna komponent kräver endast en plane prefab, och den används för att appen ska markera de ytor som hittas. Det finns färdiga prefabs som man kan använda, eller så kan man skapa de själv, vi hittade det som vi behövde i de inbyggda prefabs och därför valde vi att inte skapa en egen. 
+
+##### Hur man importerar objekten från S3:
+När den cadade fille läggs upp på S3 så omvandlas det till många olika vektorer som beskriver hur objekter ska se ut. I Unity Asset Store så fanns det en asset som hetter [Runtime OBJ Importer](https://assetstore.unity.com/packages/tools/modeling/runtime-obj-importer-49547) och det den gjorde var att skicka ett API Get anrop till S3, och därefter så får den tillbaka filen med objektets vektorer, sedan så tolkar den de data och spara de i en Embty object som sedan blir vår GameObject, alltså den cadade filen som vi vill placera.
+ 
+##### Hur man placerar objekten:
+Man behöver först skapa ett script som man lägger till ARsession Origin. I scriptet skapar man en bool funktion som kollar om användaren har gett i touch input, om ja då sparas koordinaterna i en variabel och funktionen blir sann, annars så är funktionen falsk. Sedan så använder man bool funktionen i Update för att ständigt kolla om användaren ger några input. Så fort användare trycker på en yta som AR plane manager har detekterat, så skickas var på skärman man tyckte och på vad man tryckte (vilken TrackableType). Därefter så placeras objektet på ytan man tryckte på, Sedan så så kollar scriptet om objeket är placerad så kommer alla andra input som användaren ger att ändra objektet position utan att spawna om det igen. 
 
 ## Framtidsvision
 I framtiden skulle det vara spännande att fortsätta utveckla både applikation och hemsida för att få ett ännu bättre och mer felfritt system. Det skulle vara spännande att släppa applikationen tillgänglig för allmänheten på Android så att fler kan testa vårt system. Framtiden för AR-lösningar ser onekligen ljus ut och det används redan idag på olika sätt inom olika branscher. 
