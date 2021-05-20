@@ -44,7 +44,12 @@ AR-appen har ett elegant och användarvänligt gränssnitt. Alla knappar är pla
 | ------------- | ------------- | ------------- | ------------- |
 |![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-1.png)   |  ![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-2.png)|![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-3.png)   |  ![](https://github.com/davidmorck/Hardkodarna/blob/main/Bilder/AR-4.png)|
 
+
 #### AR-programmering
+##### Bibliotek:
+* AR Foundation
+* ARCore XR Plugin "Android" 
+
 
 ## Framtidsvision
 I framtiden skulle det vara spännande att fortsätta utveckla både applikation och hemsida för att få ett ännu bättre och mer felfritt system. Det skulle vara spännande att släppa applikationen tillgänglig för allmänheten på Android så att fler kan testa vårt system. Framtiden för AR-lösningar ser onekligen ljus ut och det används redan idag på olika sätt inom olika branscher. 
